@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>html{margin:40px 20px}body{box-sizing:border-box;margin:0 auto;padding:45px;word-wrap:break-word;background-color:#fff;border:1px solid #ddd;border-radius:3px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,"Segoe UI",Arial,"PingFang SC", "Microsoft YaHei",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:16px;line-height:1.5}body pre code,body code,body pre{font-size:85%;line-height:1.45;font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,"PingFang SC", "Microsoft YaHei",monospace}body::before{display:table;content:""}body::after{display:table;clear:both;content:""}body>*:first-child{margin-top:0 !important}body>*:last-child{margin-bottom:0 !important}body a:not([href]){color:inherit;text-decoration:none}body .absent{color:#cb2431}body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}body .anchor:focus{outline:none}body p,body blockquote,body ul,body ol,body dl,body table,body pre{margin-top:0;margin-bottom:16px}body hr{height:.25em;padding:0;margin:24px 0;background-color:#e1e4e8;border:0}body blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}body blockquote>:first-child{margin-top:0}body blockquote>:last-child{margin-bottom:0}body kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#444d56;vertical-align:middle;background-color:#fafbfc;border:solid 1px #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}body h1,body h2,body h3,body h4,body h5,body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}body h1 .octicon-link,body h2 .octicon-link,body h3 .octicon-link,body h4 .octicon-link,body h5 .octicon-link,body h6 .octicon-link{color:#1b1f23;vertical-align:middle;visibility:hidden}body h1:hover .anchor,body h2:hover .anchor,body h3:hover .anchor,body h4:hover .anchor,body h5:hover .anchor,body h6:hover .anchor{text-decoration:none}body h1:hover .anchor .octicon-link,body h2:hover .anchor .octicon-link,body h3:hover .anchor .octicon-link,body h4:hover .anchor .octicon-link,body h5:hover .anchor .octicon-link,body h6:hover .anchor .octicon-link{visibility:visible}body h1 tt,body h1 code,body h2 tt,body h2 code,body h3 tt,body h3 code,body h4 tt,body h4 code,body h5 tt,body h5 code,body h6 tt,body h6 code{font-size:inherit}body h1{padding-bottom:.3em;font-size:2em;border-bottom:1px solid #eaecef}body h2{padding-bottom:.3em;font-size:1.5em;border-bottom:1px solid #eaecef}body h3{font-size:1.25em}body h4{font-size:1em}body h5{font-size:.875em}body h6{font-size:.85em;color:#6a737d}body ul,body ol{padding-left:2em}body ul.no-list,body ol.no-list{padding:0;list-style-type:none}body ul ul,body ul ol,body ol ol,body ol ul{margin-top:0;margin-bottom:0}body li>p{margin-top:16px}body li+li{margin-top:.25em}body dl{padding:0}body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:600}body dl dd{padding:0 16px;margin-bottom:16px}body table{display:block;width:100%;overflow:auto}body table th{font-weight:600}body table th,body table td{padding:6px 13px;border:1px solid #dfe2e5}body table tr{background-color:#fff;border-top:1px solid #c6cbd1}body table tr:nth-child(2n){background-color:#f6f8fa}body table img{background-color:transparent}body img{max-width:100%;box-sizing:content-box;background-color:#fff}body img[align=right]{padding-left:20px}body img[align=left]{padding-right:20px}body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}body span.frame{display:block;overflow:hidden}body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #dfe2e5}body span.frame span img{display:block;float:left}body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#24292e}body span.align-center{display:block;overflow:hidden;clear:both}body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}body span.align-center span img{margin:0 auto;text-align:center}body span.align-right{display:block;overflow:hidden;clear:both}body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}body span.align-right span img{margin:0;text-align:right}body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}body span.float-left span{margin:13px 0 0}body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}body code,body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(27,31,35,0.05);border-radius:3px}body code::before,body code::after,body tt::before,body tt::after{letter-spacing:-.2em;content:"\00a0"}body code br,body tt br{display:none}body del code{text-decoration:inherit}body pre{word-wrap:normal}body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}body pre>code::before,body pre>code::after{content:""}body pre{background-color:#f6f8fa;padding:16px}body a{color:#0366d6;text-decoration:none}body a:hover{text-decoration:underline}.hljs{display:block;background:white;padding:0.5em;color:#333333;overflow-x:auto}.hljs-comment,.hljs-meta{color:#969896}.hljs-string,.hljs-variable,.hljs-template-variable,.hljs-strong,.hljs-emphasis,.hljs-quote{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-literal,.hljs-symbol,.hljs-bullet,.hljs-attribute{color:#0086b3}.hljs-section,.hljs-name{color:#63a35c}.hljs-tag{color:#333333}.hljs-title,.hljs-attr,.hljs-selector-id,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo{color:#795da3}.hljs-addition{color:#55a532;background-color:#eaffea}.hljs-deletion{color:#bd2c00;background-color:#ffecec}.hljs-link{text-decoration:underline}.task-list-item{list-style-type:none}.task-list-item-checkbox{margin:0 0.2em 0.25em -1.6em;vertical-align:middle}.to-y {color: #ffd70a;}.to-by {color: #fff5c4;}.to-b {color: rgb(0, 255, 255);}.to-lv {color: #6fe0b5;}.to-sb {color: #179ff1;}.to-c {color: #d18e67;}.to-z {color: #a463d6}div[class*=language-] pre,div[class*=language-] pre[class*=language-]{background: transparent;position: relative;color: #f6f8fa;z-index: 1;}div[class*=language-]{position: relative;background-color: #282c34;border-radius: 6px;}</style>
+</head>
+<body>
+  <h1 style="text-align:center;font-size:10vw;">变身模组修改手册</h1>
+  <div id="fdh">
+  </div>
+  <h2 id="目录">目录</h2>
+  <ul>
+    <li><a href="#新增模型步骤">新增模型步骤</a></li>
+    <li><a href="#变身模型数据及文件命名">变身模型数据及文件命名</a></li>
+    <li><a href="#模组自带自定义molang">模组自带自定义molang</a></li>
+  </ul>
+  <h2 id="新增模型步骤">新增模型步骤</h2>
+  <ul>
+    <li>
+      <p>首先，您需要将资源包目录下的/ui整个文件夹，/textures/ui整个文件夹，/entity整个文件夹，/render_controllers文件夹里的armor.render_controllers.json文件，行为包目录下的/klp_bs_script文件夹中的内容复制到您的模组内。</p>
+      <ul>
+        <li><p>/ui存放ui文件，/textures/ui存放ui贴图，/klp_bs_script存放py代码，/entity存放纸娃娃生物的材质文件，armor.render_controllers.json文件存放生物盔甲信息</p></li>
+        <li><p>缺什么复制什么，新建模组就全部复制进去，旧模组就把缺的文件复制进去，如果没有什么特殊要求，最好是直接全部覆盖复制</p></li>
+      </ul>
+    </li>
+    <li>
+      <p>然后，在您的模组的服务端监听“ClientLoadAddonsFinishServerEvent”事件</p>
+<div class="language-"><pre class="language-"><code><span class="to-sb">def</span> <span class="to-by">__init__</span><span class="to-y">(</span><span class="to-b">self</span>, <span class="to-b">namespace</span>, <span class="to-b">systemName</span><span class="to-y">)</span>:
+    ...
+    <span class="to-sb">EN</span>, <span class="to-sb">ESN</span> = <span class="to-lv">serverApi</span>.<span class="to-by">GetEngineNamespace</span><span class="to-y">()</span>, <span class="to-lv">serverApi</span>.<span class="to-by">GetEngineSystemName</span><span class="to-y">()</span>
+    <span class="to-b">self</span>.<span class="to-by">ListenForEvent</span><span class="to-y">(</span><span class="to-sb">EN</span>, <span class="to-sb">ESN</span>, <span class="to-c">'ClientLoadAddonsFinishServerEvent'</span>, <span class="to-b">self</span>, <span class="to-b">self</span>.<span class="to-by">OnClientLoadAddonsFinishServerEvent</span><span class="to-y">)</span>
+
+<span class="to-sb">def</span> <span class="to-by">OnClientLoadAddonsFinishServerEvent</span><span class="to-y">(</span><span class="to-b">self</span>,<span class="to-b">args</span><span class="to-y">)</span>:
+    ...
+</code></pre></div>
+    </li>
+    <li>
+      <p>接着，在回调函数中使用“GetSystem”函数（关于该函数可查看网易文档）获取“模组设置界面模板”的服务端类。括号内依次填入“klp_bs_script”和“ServerSystem”（即模板的模组名和服务端系统名）</p>
+<div class="language-"><pre class="language-"><code><span class="to-sb">def</span> <span class="to-by">OnClientLoadAddonsFinishServerEvent</span><span class="to-y">(</span><span class="to-b">self</span>,<span class="to-b">args</span><span class="to-y">)</span>:
+    <span class="to-b">sys</span> = <span class="to-lv">serverApi</span>.<span class="to-by">GetSystem</span><span class="to-y">(</span><span class="to-c">'klp_bs_script'</span>, <span class="to-c">'ServerSystem'</span><span class="to-y">)</span>
+</code></pre></div>
+    </li>
+    <li>
+      <p>然后，调用类中的“setBsItems”函数，注册变身的物品。</p>
+<div class="language-"><pre class="language-"><code><span class="to-sb">def</span> <span class="to-by">OnClientLoadAddonsFinishServerEvent</span><span class="to-y">(</span><span class="to-b">self</span>,<span class="to-b">args</span><span class="to-y">)</span>:
+    <span class="to-b">sys</span> = <span class="to-lv">serverApi</span>.<span class="to-by">GetSystem</span><span class="to-y">(</span><span class="to-c">'klp_bs_script'</span>, <span class="to-c">'ServerSystem'</span><span class="to-y">)</span>
+    <span class="to-b">item</span> = <span class="to-y">{</span>
+      <span class="to-c">'mc_klp_bs_cywl:item_trans'</span>:<span class="to-c">'cywl'</span>
+    <span class="to-y">}</span>
+    <span class="to-b">sys</span>.setBsItems<span class="to-y">(</span><span class="to-b">item</span><span class="to-y">)</span>
+</code></pre></div>
+      <ul>
+        <li><p>'mc_klp_bs_cywl:item_trans'，自定义物品id名，玩家使用这个物品变身</p></li>
+        <li><p>'cywl'，<span style="color: red;">变身id</span>，会在模组中经常用到，请为一个变身模型定义一个变身id，避免重复</p></li>
+      </ul>
+    </li>
+    <li>
+      <p>然后，调用类中的“setBsData”函数，注册变身模型数据。</p>
+<div class="language-"><pre class="language-"><code><span class="to-sb">def</span> <span class="to-by">OnClientLoadAddonsFinishServerEvent</span><span class="to-y">(</span><span class="to-b">self</span>,<span class="to-b">args</span><span class="to-y">)</span>:
+    <span class="to-b">sys</span> = <span class="to-lv">serverApi</span>.<span class="to-by">GetSystem</span><span class="to-y">(</span><span class="to-c">'klp_bs_script'</span>, <span class="to-c">'ServerSystem'</span><span class="to-y">)</span>
+    <span class="to-b">bs_data</span> = <span class="to-y">{</span>
+      ...
+    <span class="to-y">}</span>
+    <span class="to-b">sys</span>.setBsData<span class="to-y">(</span><span class="to-b">bs_data</span><span class="to-y">)</span>
+</code></pre></div>
+      <ul>
+        <li><p>bs_data内填写<span style="color: red;">变身模型数据</span>，格式请看<a href="#变身模型数据及文件命名">变身模型数据及文件命名</a></p></li>
+      </ul>
+    </li>
+    <li>
+      <p>（可选），调用类中的“setBsUiXz”函数，注册ui形式开启变身。</p>
+<div class="language-"><pre class="language-"><code><span class="to-sb">def</span> <span class="to-by">OnClientLoadAddonsFinishServerEvent</span><span class="to-y">(</span><span class="to-b">self</span>,<span class="to-b">args</span><span class="to-y">)</span>:
+    <span class="to-b">sys</span> = <span class="to-lv">serverApi</span>.<span class="to-by">GetSystem</span><span class="to-y">(</span><span class="to-c">'klp_bs_script'</span>, <span class="to-c">'ServerSystem'</span><span class="to-y">)</span>
+    <span class="to-b">uixz</span> = <span class="to-y">{</span>
+      ...
+    <span class="to-y">}</span>
+    <span class="to-b">sys</span>.setBsUiXz<span class="to-y">(</span><span class="to-b">uixz</span><span class="to-y">)</span>
+</code></pre></div>
+      <ul>
+        <li><p>uixz内填写ui界面所需要的数据，格式如下：</p></li><pre>uixz = {
+  'cywl': {
+      "icon" : "textures/items/mc_klp_bs_apple",
+      "txt" : "天下第一公主殿下",
+      "name" : "初音未来",
+      "geometry" : "geometry.mc_klp_bs_cy",
+      "textures" : "textures/entity/cywl/cy",
+      "materials" : "entity_alphatest"
+  },
+  ...
+}</pre>
+        <ul>
+          <li><p>'cywl'是变身id，同上</p></li>
+          <li><p>'icon'是选择ui所需的贴图，填写贴图路径</p></li>
+          <li><p>'txt'是变身模型的描述，填写文字</p></li>
+          <li><p>'name'是变身模型的中文名字，填写文字</p></li>
+          <li><p>'geometry'是变身模型的模型id，填写对应模型的id名</p></li>
+          <li><p>'textures'是变身模型的贴图，填写对应模型的贴图路径</p></li>
+          <li><p>'materials'是变身模型的材料(材质)名，填写对应模型的材料(材质)名，一般为entity_alphatest</p></li>
+        </ul>
+      </ul>
+    </li>
+    <li>
+      <p>（可选），调用类中的“setBsCamera”函数，注册变身后的摄像机高度和位置。</p>
+<div class="language-"><pre class="language-"><code><span class="to-sb">def</span> <span class="to-by">OnClientLoadAddonsFinishServerEvent</span><span class="to-y">(</span><span class="to-b">self</span>,<span class="to-b">args</span><span class="to-y">)</span>:
+    <span class="to-b">sys</span> = <span class="to-lv">serverApi</span>.<span class="to-by">GetSystem</span><span class="to-y">(</span><span class="to-c">'klp_bs_script'</span>, <span class="to-c">'ServerSystem'</span><span class="to-y">)</span>
+    <span class="to-b">camera</span> = <span class="to-y">{</span>
+      ...
+    <span class="to-y">}</span>
+    <span class="to-b">sys</span>.setBsCamera<span class="to-y">(</span><span class="to-b">camera</span><span class="to-y">)</span>
+</code></pre></div>
+      <ul>
+        <li><p>camera内填写摄像机所需要的数据，格式如下：</p></li><pre>camera = {
+  'cywl': [
+    {
+      'default':[(0,0,0),(0,0.5,-4)],
+      'sit':[(0,-0.5,0),(0,0.5,-4)],
+      'climb':[(0,-1.2,0),(0,0.5,-4.5)],
+      'swim':[(0,0,0),(0,0.5,-5)],
+      'sneak':[(0,0,0),(0,0.48,-4.5)]
+    },
+    {
+      'default':[(0,0,0),(0,0,0)],
+      'sit':[(0,-0.5,0),(0,0,0)],
+      'climb':[(0,-1.2,0),(0,0,0)],
+      'swim':[(0,0,0),(0,0,0)],
+      'sneak':[(0,0,0),(0,0,0)]
+    },
+    {
+      'default':[(0,0,0),(0,0,0)],
+      'sit':[(0,-0.5,0),(0,0,0)],
+      'climb':[(0,-1.2,0),(0,0,0)],
+      'swim':[(0,0,0),(0,0,0)],
+      'sneak':[(0,0,0),(0,0,0)]
+    }
+  ],
+  ...
+}</pre>
+        <ul>
+          <li><p>摄像机高度和位置数据，是用来调整玩家视角，以此来匹配变身后的身高，同时也是用来制作过肩视角，如果不会写，就直接不调用“setBsCamera”函数设置即可，程序会自动使用默认值来自动调整，一旦设置，摄像机所需要的数据一定要填写完整</p></li>
+          <li><p>'cywl'是变身id，同上</p></li>
+          <li><p>第一层是[ ]列表，分别代表第一人称、第三人称正面和第三人称背面</p></li>
+          <li><p>第二层是{ }字典，分别代表玩家此时的行动状态，比如：普通、蹲下、坐下、游泳等</p></li>
+          <li><p>第三层是[ ]列表，分别代表相机锚点和摄像机偏移量，相关接口：<a href="https://mc.163.com/dev/mcmanual/mc-dev/mcdocs/1-ModAPI/%E6%8E%A5%E5%8F%A3/%E7%8E%A9%E5%AE%B6/%E6%91%84%E5%83%8F%E6%9C%BA.html?key=SetCameraAnchor&docindex=1&type=0">SetCameraAnchor(设置相机锚点)</a>、<a href="https://mc.163.com/dev/mcmanual/mc-dev/mcdocs/1-ModAPI/%E6%8E%A5%E5%8F%A3/%E7%8E%A9%E5%AE%B6/%E6%91%84%E5%83%8F%E6%9C%BA.html?key=SetCameraOffset&docindex=3&type=0">SetCameraOffset(设置摄像机偏移量)</a></p></li>
+          <li><p>'default'是普通行动状态</p></li>
+          <li><p>'sit'是坐下行动状态</p></li>
+          <li><p>'climb'是爬行行动状态</p></li>
+          <li><p>'swim'是游泳行动状态</p></li>
+          <li><p>'sneak'是蹲下行动状态</p></li>
+        </ul>
+      </ul>
+    </li>
+    <li>
+      <p>（可选），调用类中的“setBsCustomMusic”函数，注册变身后玩家的音效。</p>
+<div class="language-"><pre class="language-"><code><span class="to-sb">def</span> <span class="to-by">OnClientLoadAddonsFinishServerEvent</span><span class="to-y">(</span><span class="to-b">self</span>,<span class="to-b">args</span><span class="to-y">)</span>:
+    <span class="to-b">sys</span> = <span class="to-lv">serverApi</span>.<span class="to-by">GetSystem</span><span class="to-y">(</span><span class="to-c">'klp_bs_script'</span>, <span class="to-c">'ServerSystem'</span><span class="to-y">)</span>
+    <span class="to-b">MusicData</span> = <span class="to-y">{</span>
+      ...
+    <span class="to-y">}</span>
+    <span class="to-b">sys</span>.setBsCustomMusic<span class="to-y">(</span><span class="to-b">MusicData</span><span class="to-y">)</span>
+</code></pre></div>
+      <ul>
+        <li><p>MusicData内填写音效设置所需要的数据，格式如下：</p></li><pre>MusicData = {
+  'cywl': {
+    "attack": "cywl.attack",
+    "damage": "cywl.damage",
+    "death": "cywl.death",
+    "breathe": "cywl.breathe",
+    "jump": "cywl.jump",
+    "eat": "cywl.eat",
+    "potion": "cywl.potion",
+    "water_breathe": "cywl.water_breathe",
+    "drowning": "cywl.drowning"
+  },
+  ...
+}</pre>
+        <ul>
+          <li><p>音效设置并不是修改玩家的音效，而是在某种状态触发时播放这种状态对应的音效</p></li>
+          <li><p>'cywl'是变身id，同上</p></li>
+          <li><p>'attack'是玩家攻击其它生物时的音效</p></li>
+          <li><p>'damage'是玩家受伤时的音效</p></li>
+          <li><p>'death'是玩家死亡时的音效</p></li>
+          <li><p>'breathe'是玩家一段时间进行一次的呼吸的音效</p></li>
+          <li><p>'jump'是玩家跳跃时的音效</p></li>
+          <li><p>'eat'是玩家吃东西的音效</p></li>
+          <li><p>'potion'是玩家喝东西的音效</p></li>
+          <li><p>'water_breathe'是玩家一段时间进行一次的呼吸但是是在水下的音效</p></li>
+          <li><p>'drowning'是玩家因溺水受伤的音效(不会和受伤时的音效叠加)</p></li>
+          <li><p>"cywl.attack"等为音效id，在资源包目录下的/sounds文件夹中的sound_definitions.json中设置</p></li>
+          <li><p>sound_definitions.json中一般格式为：</p><pre>{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+      "cywl.attack": {
+          "max_distance": 20.0,
+          "min_distance": 0,
+          "sounds": [
+              {
+                  "name": "sounds/cywl/ceshiyinxiao",
+                  "pitch": 1,
+                  "volume": 1
+              }
+          ]
+      },
+      "cywl.damage": {
+          "max_distance": 20.0,
+          "min_distance": 0,
+          "sounds": [
+              {
+                  "name": "sounds/cywl/ceshiyinxiao",
+                  "pitch": 1,
+                  "volume": 1
+              }
+          ]
+      },
+      ...
+  }
+}</pre>
+            <ul>
+              <li><p>"name"中填写音效文件所在路径</p></li>
+              <li><p>网易模组中，音效文件要为ogg格式，不能是MP3等常见格式</p></li>
+            </ul>
+          </li>
+          <li><p>音效播放相关接口：<a href="https://mc.163.com/dev/mcmanual/mc-dev/mcdocs/1-ModAPI/%E6%8E%A5%E5%8F%A3/%E9%9F%B3%E6%95%88.html?key=PlayCustomMusic&docindex=2&type=0">PlayCustomMusic(播放场景音效，包括原版音效及自定义音效)</a></p></li>
+        </ul>
+      </ul>
+    </li>
+  </ul>
+  <h2 id="变身模型数据及文件命名">变身模型数据及文件命名</h2>
+  <ul>
+    <li>
+      <p>控制玩家的变身后的模型等数据</p>
+      <p>可以搭配各种自定义molang来还原原版的动作，具体可以参考模板自带的模型的动画，了解模组自带的自定义molang请看：<a href="#模组自带自定义molang">模组自带自定义molang</a></p>
+      <p>参考格式：</p>
+<div class="language-"><pre class="language-"><code><span class="to-b">bs_data</span> = <span class="to-y">{</span>
+    <span class="to-c">'cywl'</span>: <span class="to-z">{</span>
+        <span class="to-c">'main_query'</span>:<span class="to-c">'query.mod.klp_bs_cywl_main'</span>,
+        <span class="to-c">'animations'</span>: <span class="to-sb">{</span>
+            <span class="to-c">'mc_klp_bs_cywl'</span>:<span class="to-y">[</span>
+                <span class="to-c">'idle'</span>, <span class="to-c">'walk'</span>, <span class="to-c">'run'</span>, <span class="to-c">'ride'</span>, <span class="to-c">'boat'</span>, <span class="to-c">'attack'</span>, <span class="to-c">'swim'</span>, <span class="to-c">'swim_stand'</span>, <span class="to-c">'sneak'</span>, <span class="to-c">'sneaking'</span>, <span class="to-c">'sleep'</span>,
+                <span class="to-c">'blink'</span>, <span class="to-c">'sit'</span>, <span class="to-c">'climbing'</span>, <span class="to-c">'climb'</span>, <span class="to-c">'look'</span>,
+                <span class="to-c">'fly'</span>, <span class="to-c">'death'</span>, <span class="to-c">'elytra_fly'</span>,
+                <span class="to-c">'is_first_person'</span>,
+                <span class="to-c">'riptiding'</span>, <span class="to-c">'riptiding2'</span>,
+                <span class="to-c">'hold_mainhand_fishing'</span>,
+                <span class="to-c">'use_mainhand'</span>,
+                <span class="to-c">'use_mainhand_eat'</span>,
+                <span class="to-c">'use_mainhand_drink'</span>,
+                <span class="to-c">'use_mainhand_crossbow'</span>, <span class="to-c">'use_mainhand_crossbow2'</span>, <span class="to-c">'hold_mainhand_charged_crossbow'</span>,
+                <span class="to-c">'use_mainhand_bow'</span>, <span class="to-c">'use_mainhand_bow2'</span>
+            <span class="to-y">]</span>
+        <span class="to-sb">}</span>,
+        <span class="to-c">'animation_controller'</span>: <span class="to-sb">{</span>
+            <span class="to-c">'mc_klp_bs_cywl'</span>: <span class="to-y">[</span>
+                <span class="to-c">'first'</span>, <span class="to-c">'go_attack'</span>, <span class="to-c">'blink'</span>, <span class="to-c">'useing'</span>
+            <span class="to-y">]</span>
+        <span class="to-sb">}</span>,
+        <span class="to-c">'rander_controller'</span>: <span class="to-sb">[</span>
+            <span class="to-c">'controller.render.klp_bs_cywl.default'</span>
+        <span class="to-sb">]</span>,  
+        <span class="to-c">'models'</span>: <span class="to-sb">[</span>
+            <span class="to-y">(</span><span class="to-c">'klp_bs_cywl'</span>, <span class="to-c">'geometry.mc_klp_bs_cy'</span>, <span class="to-c">'textures/entity/cywl/cy'</span>, <span class="to-c">'entity_alphatest'</span><span class="to-y">)</span>
+        <span class="to-sb">]</span>,
+        <span class="to-c">'root'</span>:<span class="to-c">'controller.animation.mc_klp_bs_cywl.root'</span>
+    <span class="to-z">}</span>
+<span class="to-y">}</span>
+</code></pre></div>
+      <ul>
+        <li><p>'cywl'，<span style="color: red;">变身id</span>，会在模组中经常用到，请为一个变身模型定义一个变身id，避免重复</p></li>
+        <li><p>'main_query'，自定义molang，模型控制需要使用到自定义molang，请为一个变身模型定义一个自定义molang，避免重复</p></li>
+        <li><p>'animations'，动画</p></li>
+<div class="language-"><pre class="language-"><code><span class="to-y">{</span>
+    <span class="to-b">"format_version"</span>: <span class="to-c">"1.8.0"</span>,
+    <span class="to-b">"animations"</span>: <span class="to-z">{</span>
+        <span class="to-b">"animation.mc_klp_bs_cywl.idle"</span>: <span class="to-sb">{</span>
+          ...
+        <span class="to-sb">}</span>,
+        ...
+    <span class="to-z">}</span>
+<span class="to-y">}</span>
+</code></pre></div>
+          <ul>
+            <li><p>动画文件命名为animation.xxx.xxx，在此参考格式中，因为模型数据文件中使用mc_klp_bs_cywl，所以动画文件的前一个xxx填写mc_klp_bs_cywl。</p></li>
+            <li>
+              <p>在模型数据文件中有</p><pre>bs_data = {
+  'cywl': {
+    'animations': {
+      'mc_klp_bs_cywl':[
+        'idle', 'walk'...
+      ]
+    },
+    ...
+  }
+}</pre>
+              <p>其中idle、walk等就是要添加的动画，idle对应的动画文件命名为animation.mc_klp_bs_cywl.idle。</p>
+            </li>
+          </ul>
+        <li><p>'animation_controller'，动画控制器</p></li>
+<div class="language-"><pre class="language-"><code><span class="to-y">{</span>
+    <span class="to-b">"format_version"</span>: <span class="to-c">"1.8.0"</span>,
+    <span class="to-b">"animation_controllers"</span>: <span class="to-z">{</span>
+        <span class="to-b">"controller.animation.mc_klp_bs_cywl.first"</span>: <span class="to-sb">{</span>
+          ...
+        <span class="to-sb">}</span>,
+        ...
+    <span class="to-z">}</span>
+<span class="to-y">}</span>
+</code></pre></div>
+          <ul>
+            <li><p>动画控制器文件命名为controller.animation.xxx.xxx，在此参考格式中，因为模型数据文件中使用mc_klp_bs_cywl，所以动画控制器文件的前一个xxx填写mc_klp_bs_cywl。</p></li>
+            <li>
+              <p>在模型数据文件中有</p><pre>bs_data = {
+  'cywl': {
+    'animation_controller': {
+      'mc_klp_bs_cywl':[
+        'first', 'go_attack'...
+      ]
+    },
+    ...
+  }
+}</pre>
+              <p>其中first、go_attack等就是要添加的动画控制器，first对应的动画控制器文件命名为controller.animation.mc_klp_bs_cywl.first。</p>
+            </li>
+          </ul>
+        <li><p>'rander_controller'，渲染控制器</p></li>
+<div class="language-"><pre class="language-"><code><span class="to-y">{</span>
+    <span class="to-b">"format_version"</span>: <span class="to-c">"1.8.0"</span>,
+    <span class="to-b">"render_controllers"</span>: <span class="to-z">{</span>
+        <span class="to-b">"controller.render.klp_bs_cywl.default"</span>: <span class="to-sb">{</span>
+            <span class="to-b">"geometry"</span>: <span class="to-c">"</span><span class="to-lv">Geometry</span>.<span class="to-by">default</span>"</span>,
+            <span class="to-b">"materials"</span>: <span class="to-y">[</span>
+                <span class="to-z">{</span>
+                    <span class="to-b">"*"</span>: <span class="to-c">"</span><span class="to-lv">Material</span>.<span class="to-by">klp_bs_cywl</span>"</span>
+                <span class="to-z">}</span>
+            <span class="to-y">]</span>,
+            <span class="to-b">"textures"</span>: <span class="to-y">[</span>
+                <span class="to-c">"</span><span class="to-lv">Texture</span>.<span class="to-by">klp_bs_cywl</span>"</span>
+            <span class="to-y">]</span>
+        <span class="to-sb">}</span>
+    <span class="to-z">}</span>
+<span class="to-y">}</span>
+</code></pre></div>
+          <ul>
+            <li><p>渲染控制器中klp_bs_cywl在其它地方还会用到，请为一个变身模型定义一个名，避免重复。</p></li>
+          </ul>
+        <li><p>'models'，模型、贴图、材料，在'models':[()]的()内，依次填写的内容为：</p></li>
+          <ul>
+            <li><p>渲染控制器中填写的klp_bs_cywl。</p></li>
+            <li><p>变身后的模型的模型文件id</p></li>
+            <li><p>变身后的模型的贴图路径</p></li>
+            <li><p>变身后的模型的材料名</p></li>
+          </ul>
+        <li><p>'root'，也是动画控制器，但是原版存在一个root，所以这个要单独设置</p></li>
+<div class="language-"><pre class="language-"><code><span class="to-y">{</span>
+    <span class="to-b">"format_version"</span>: <span class="to-c">"1.8.0"</span>,
+    <span class="to-b">"animations"</span>: <span class="to-z">{</span>
+        <span class="to-b">"controller.animation.mc_klp_bs_cywl.root"</span>: <span class="to-sb">{</span>
+          ...
+        <span class="to-sb">}</span>
+    <span class="to-z">}</span>
+<span class="to-y">}</span>
+</code></pre></div>
+      </ul>
+    </li>
+  </ul>
+  <h2 id="模组自带自定义molang">模组自带自定义molang</h2>
+  <ul>
+    <li>
+      <p>模组中共拥有12个可以使用的自定义molang</p>
+      <p>可以搭配各种自定义molang来还原原版的动作，具体可以参考模板自带的模型的动画</p>
+      <p>具体包含：</p>
+      <ul>
+        <li><p>"query.mod.klp_bs_armor"，如果玩家变身后显示盔甲，则返回0.0，否则返回1.0。</p></li>
+        <li><p>"query.mod.klp_bs_ride"，如果玩家进行骑乘并且骑乘了船或者矿车，则返回1.0，否则返回0.0。</p></li>
+        <li><p>"query.mod.klp_bs_fishing"，如果玩家手持钓竿类型物品，则返回1.0，否则返回0.0。</p></li>
+        <li><p>"query.mod.klp_bs_crossbowing"，如果玩家手持弩，则返回1.0，否则返回0.0。</p></li>
+        <li><p>"query.mod.klp_bs_trident"，如果玩家手持三叉戟，则返回1.0，否则返回0.0。</p></li>
+        <li><p>"query.mod.klp_bs_bow"，如果玩家手持弓，则返回1.0，否则返回0.0。</p></li>
+        <li><p>"query.mod.klp_bs_elytra"，如果玩家装备上了鞘翅，则返回1.0，否则返回0.0。</p></li>
+        <li><p>"query.mod.klp_bs_sit"，如果玩家变身后处于坐下行动状态，则返回1.0，否则返回0.0。</p></li>
+        <li><p>"query.mod.klp_bs_climb"，如果玩家变身后处于爬行行动状态，则返回1.0，否则返回0.0。</p></li>
+        <li><p>"query.mod.klp_bs_is_first_person"，如果玩家变身后处于过肩视角的第一人称中，则返回1.0，否则返回0.0。</p></li>
+        <li><p>"query.mod.klp_bs_fly_dowm"，如果玩家变身后从高处掉落，则返回1.0，否则返回0.0。</p></li>
+        <li><p>"query.mod.klp_bs_use_type"，如果玩家正在使用具体物品，则返回具体值，否则返回0.0。</p></li>
+        <ul>
+          <li><p>使用物品类型和物品名称二种方式一起判断，相关接口：<a href="https://mc.163.com/dev/mcmanual/mc-dev/mcdocs/1-ModAPI-beta/%E6%8E%A5%E5%8F%A3/%E7%89%A9%E5%93%81.html?key=GetItemBasicInfo&docindex=3&type=0">GetItemBasicInfo(获取物品的基础信息)</a></p></li>
+          <li><p>使用桶类型、钓鱼竿类型、剪刀类型、斧头类型、锄头类型、锹类型等物品，"query.mod.klp_bs_use_type"返回1.0</p></li>
+          <li><p>使用食物类型物品，"query.mod.klp_bs_use_type"返回2.0</p></li>
+          <li><p>使用药水类型物品或者奶桶，"query.mod.klp_bs_use_type"返回3.0</p></li>
+          <li><p>使用弩物品，"query.mod.klp_bs_use_type"返回4.0</p></li>
+          <li><p>使用三叉戟物品，"query.mod.klp_bs_use_type"返回5.0</p></li>
+          <li><p>使用弓物品，"query.mod.klp_bs_use_type"返回6.0</p></li>
+        </ul>
+      </ul>
+    </li>
+  </ul>
+</body>
+</html>
